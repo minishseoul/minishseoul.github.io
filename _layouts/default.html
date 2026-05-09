@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title and page.title != 'home' %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
     <meta name="description" content="{{ site.description | escape }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/minish.css' | relative_url }}?v=12">
   </head>
-  <body>
+  <body class="{% if page.layout == 'post' %}post-page{% else %}home-page{% endif %}">
+    <header class="site-header">
+      <img src="{{ '/assets/images/header.jpg' | relative_url }}" alt="header" class="site-header-image">
+    </header>
     <main>
       {{ content }}
     </main>
+    <footer class="site-footer">
+      <a href="https://www.instagram.com/minishseoul/" target="_blank" rel="noopener">@minishseoul</a>
+    </footer>
   </body>
 </html>
